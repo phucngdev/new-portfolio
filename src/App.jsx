@@ -1,16 +1,23 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/Home";
+import PublicRoute from "./routes/PublicRoute";
+import { useEffect } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location.pathname]);
 
   return (
     <>
-      <span class="xl:text-7xl animate-gradient bg-[linear-gradient(to_right,theme(colors.green.300),theme(colors.green.500),theme(colors.sky.400),theme(colors.yellow.200),theme(colors.sky.400),theme(colors.green.200),theme(colors.green.300))] bg-[length:200%_auto] bg-clip-text text-3xl font-bold tracking-tighter text-transparent">
-        Frontend Development
-      </span>
+      <Routes>
+        <Route path="/" element={<PublicRoute />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
     </>
   );
 }

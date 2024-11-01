@@ -1,7 +1,7 @@
 export const navigateVN = {
   title: {
     home: "Trang chủ",
-    project: "Dự án",
+    showcases: "Showcases",
     about: "Giới thiệu",
     darkMode: "Dark mode",
   },

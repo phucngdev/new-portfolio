@@ -1,7 +1,7 @@
 export const navigateEN = {
   title: {
     home: "Home",
-    project: "Projects",
+    showcases: "Showcases",
     about: "About",
     darkMode: "Dark mode",
   },
